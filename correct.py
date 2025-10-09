@@ -38,7 +38,7 @@ if __name__ == "__main__":
                 if len(word) < 2:
                     continue
                 txt, count = re.subn(
-                    word[0].strip()+ r'\b', word[1].strip(), txt)
+                    word[0].strip(), word[1].strip(), txt)
                 if count > 0:
                     print(f'Replaced {word[0].strip()} with {word[1].strip()} x {count}')
 
@@ -51,7 +51,7 @@ if __name__ == "__main__":
                     if not w:
                         continue
 
-                    pat = re.compile(re.escape(w) + r'\b')
+                    pat = re.compile(re.escape(w))
                     txt, n = pat.subn(correct, txt)
                     if n:
                         print(f"Replaced {word} with {correct} x {n}")
